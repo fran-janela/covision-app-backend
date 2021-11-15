@@ -148,5 +148,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = {'covision-backend.herokuapp.com','0.0.0.0','127.0.0.1', 'localhost'}
+ALLOWED_HOSTS = ['covision-backend.herokuapp.com','0.0.0.0','127.0.0.1', 'localhost']
 
