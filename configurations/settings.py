@@ -102,7 +102,7 @@ WSGI_APPLICATION = 'configurations.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://localhost/<NAME>?user=<USER>&password=<PASSWORD>',
+        default='postgresql://localhost/postgres?user=postgres&password=postgres',
         conn_max_age=600,
         ssl_require=not DEBUG
     )
@@ -145,9 +145,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
-STATIC_URL = '/static/'
-
 
 ALLOWED_HOSTS = {'covision-backend.herokuapp.com','0.0.0.0','127.0.0.1', 'localhost'}
 
