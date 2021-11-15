@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'v%^q7%_uf+k9@_6zh=z1-0&4%9vagw&yn$m_lad=&yb3(m7o)x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -57,7 +58,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'app_dir.main'
+    'app_dir.main',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +70,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'configurations.urls'
 
@@ -95,16 +101,13 @@ WSGI_APPLICATION = 'configurations.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        # 'HOST': 'host.docker.internal',
-        'HOST': '0.0.0.0',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://localhost/<NAME>?user=<USER>&password=<PASSWORD>',
+        conn_max_age=600,
+        ssl_require=not DEBUG
+    )
 }
+
 
 
 # Password validation
@@ -146,5 +149,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-ALLOWED_HOSTS = {'0.0.0.0','127.0.0.1', 'localhost'}
+ALLOWED_HOSTS = {'covision-backend.herokuapp.com','0.0.0.0','127.0.0.1', 'localhost'}
 

@@ -4,14 +4,9 @@ from ...core.loading import get_model
 from django.http import Http404
 from rest_framework.response import Response
 from rest_framework import status
-from app_dir.main.api.serializers import UserSerializer, BookmarksSerializer
-
-class UsersViewSet(viewsets.ModelViewSet):
-	TABLE = get_model('main', 'User')
-	queryset = TABLE.objects.all()
-	serializer_class = UserSerializer
+from app_dir.main.api.serializers import BookmarksSerializer
 
 class BookmarksViewSet(viewsets.ModelViewSet):
-	TABLE = get_model('main', 'Bookmark')
+	TABLE = get_model('main', 'Bookmarks')
 	queryset = TABLE.objects.all()
 	serializer_class = BookmarksSerializer
