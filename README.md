@@ -1,6 +1,6 @@
 <div align="center">
 <h1>
-  <strong>Lab 1 - Backend</strong>
+  <strong>Projeto 1-B - TechWeb</strong>
 </h1>
   
 ## Autor: 
@@ -10,26 +10,36 @@
     <td align="center"><a href="https://github.com/fran-janela"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/21694400?v=4" width="100px;" alt=""/><br /><sub><b>Francisco Pinheiro Janela</b></sub></a><br /><a href="https://github.com/fran-janela" title="Francisco Pinheiro Janela"></a></td>
     </tr>
 </table>
+  </br></br>
   
-## Docker:
+## Deploy da aplicação:
   
-<p>
-
-  
-```bash
-    # Iniciar o Docker
-    $ docker-compose up -d
-
-    # Fazer as migrações necessárias
-    $ docker-compose exec web python manage.py makemigrations
-    $ docker-compose exec web python manage.py migrate
-
-    # Criar um superusuário para a aplicação:
-    $ docker-compose exec web python manage.py createsuperuser
-```
-</p>
+<p>para acessar o aplicativo <a href="https://covision-app.herokuapp.com/">clique aqui</a>.</br></br></p>
+<p>Ou acesse o link abaixo:</p>
+<a href="https://covision-app.herokuapp.com/">https://covision-app.herokuapp.com/</a>
+</br></br>
+<p>O backend não possui interface, porém seu link é: https://covision-backend.herokuapp.com/api/bookmarks/</p>
 </div>
+</br></br></br></br>
+
+## O que foi feito:
+
+- [x] Backend Django Rest Framework
+- [x] Frontend Next.js
+- [x] Deploy da aplicação no Heroku (Frontend e Backend)
+- [x] Uma Dashboard que apresenta os dados de Covid globais e onde é possível procurar por dados de países específicos
+- [x] Uma área de busca para países e regiões capaz de salvar dados no backend para posterior avaliação
+
+## Adicionais:
+
+- [x] Tela de Loading customizada para esperar o fetch da API
+- [x] Um dropdown Autocomplete para os países.
+- [x] Uma comparação em porcentagem dos dados de Covid com o total da população do país (API de população mundial - diferente da API de casos de Covid).
+- [x] Capacidade de deletar bookmarks feitos.
+- [x] Estilizado com css e funções de javaScript
+
+</br></br>
 
 <div align="right">
-  Insper Jr
+  Insper - 4ºComp
 </div>
