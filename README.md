@@ -15,10 +15,9 @@
   
 <p>
 
-  
 ```bash
     # Iniciar o Docker
-    $ docker-compose up -d
+    $ docker-compose up db
 
     # Fazer as migrações necessárias
     $ docker-compose exec web python manage.py makemigrations
@@ -27,6 +26,7 @@
     # Criar um superusuário para a aplicação:
     $ docker-compose exec web python manage.py createsuperuser
 ```
+
 </p>
 </div>
 
